@@ -1,8 +1,12 @@
-package test.client;
+package test.server;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+/*------------------------------------------------------------------------------*/
+//Server needs FilePOJO to unmarshal the XML									//
+//We could have used an XSD but since we have the file better to copy it over	//
+/*------------------------------------------------------------------------------*/
+
 public class FilePOJO {
 	FilePOJO(){}
 	FilePOJO(String username, String filename, String date, byte[]contents){
@@ -17,10 +21,10 @@ public class FilePOJO {
 	private String date; //yyyy-MM-dd
 	private byte[] contents;
 	
-	public String getName() {
+	public String getUsername() {
 		return username;
 	}
-	public void setName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 	public String getFilename() {
